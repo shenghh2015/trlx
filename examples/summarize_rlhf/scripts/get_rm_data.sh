@@ -1,0 +1,1 @@
+python dataset/get_gptj_reward_test_data.py

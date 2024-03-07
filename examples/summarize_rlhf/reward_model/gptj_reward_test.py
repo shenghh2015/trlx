@@ -15,7 +15,6 @@ def set_seed(seed_val=42):
     torch.manual_seed(seed_val)
     torch.cuda.manual_seed_all(seed_val)
 
-
 def create_comparison_dataset(path="CarperAI/openai_summarize_comparisons", split="train"):
     dataset = load_dataset(path, split=split)
     if split == "test":
@@ -92,7 +91,7 @@ if __name__ == "__main__":
     PAD_ID = tokenizer(tokenizer.pad_token)["input_ids"][0]
 
     model = GPTRewardModel("CarperAI/openai_summarize_tldr_sft")
-    model.load_state_dict(torch.load("rm_checkpoint/pytorch_model.bin"))
+    model.load_state_dict(torch.load("reward_model/rm_checkpoint/pytorch_model.bin"))
     max_length = 550
     val_pairs = create_comparison_dataset("CarperAI/openai_summarize_comparisons", "test")
     dev_dataset = PairwiseDataset(val_pairs, tokenizer, max_length=max_length)

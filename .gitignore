@@ -151,3 +151,7 @@ examples/experiments/grounded_program_synthesis/dataset
 ckpts/
 
 ray_results/
+
+# 
+examples/summarize_rlhf/reward_model/rm_checkpoint
+examples/summarize_rlhf/reward_model/rm_checkpoint/*
